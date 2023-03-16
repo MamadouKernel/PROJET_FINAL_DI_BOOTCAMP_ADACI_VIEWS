@@ -1,0 +1,74 @@
+<div class="btn btn-outline-primary">
+    <a routerLinkActive="active">Ajouter un utilisateur</a>
+</div>
+<br>
+<br><br>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+            <h4 class="card-title">Liste des utilisateurs</h4>
+            </div>
+            <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                <thead class=" text-primary">
+                    <th>
+                    ID
+                    </th>
+                    <th>
+                    Nom
+                    </th>
+                    <th>
+                    Prénoms
+                    </th>
+                    <th>
+                    Username
+                    </th>
+                    <th>
+                    Email
+                    </th>
+                    <th>
+                    Password
+                    </th>
+                    <th>
+                    Role
+                    </th>
+                    <th>
+                    Actions
+                    </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of users; let index = index;">
+                    <td>{{ index + 1 }}</td>
+                    <td>{{ user.nom }}</td>
+                    <td>{{user.prenom}}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.password}}</td>
+                    <td>
+                        <span *ngIf="user.role === 1">
+                          <p>Admins</p>
+                        </span>
+                        <span *ngIf="user.role === 2">
+                          <p>Gestionnaire</p>
+                        </span>
+                        <span *ngIf="user.role === 3">
+                          <p>Collecteur</p>
+                        </span>
+                      </td>
+                    <td>
+                        <button class="btn btn-primary" (click)="modifierUser(user.id)">Modifier</button>
+                        <button class="btn btn-danger" (click)="deleteOneUser(user.id)">Supprimer</button>
+                    </td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="container-fluid content">
+  <div class="row ">
+    <div class=" col-sm-12 col-md-4 col-lg-4">
+      <div class="item-card">
+
+        <h2 class="font-name-iceland">50</h2>
+        <p class="font-name-iceland">Nombre de centre de collecte</p>
+      </div>
+    </div>
+    <div class=" col-sm-12 col-md-4 col-lg-4">
+      <div class="item-card">
+
+        <h2 class="font-name-iceland">1500</h2>
+        <p class="font-name-iceland">Nombre de Déchets</p>
+      </div>
+    </div>
+    <div class=" col-sm-12 col-md-4 col-lg-4">
+      <div class="item-card">
+        <h2 class="font-name-iceland">500</h2>
+        <p class="font-name-iceland">Nombre de Planification par jour</p>
+      </div>
+    </div>
+    <div class="col-12 mt-3">
+
+      <ng-template #titleTemplate>
+        <div class="container-fluid">
+          <div class="row p-3">
+            <div class="col-sm-12 col-md-12 justify-content-between d-flex align-items-center">
+              <div class="title">
+                <h3 class="font-name-iceland">Tableau des centres de planifications des dechets</h3>
+              </div>
+              <div class="date">
+                <span>01/03/2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <nz-table #columnTable [nzData]="listOfData" [nzScroll]="{ x: '1100px' }" [nzTitle]="titleTemplate" nzBordered>
+        <thead>
+        <tr>
+          <th nzLeft>Nom du point de collecte</th>
+          <th nzWidth="10%" >Zone</th>
+          <th nzWidth="9%">Quantité</th>
+          <th>Type de dechet</th>
+          <th nzRight>Attribué à</th>
+          <th nzRight>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of columnTable.data">
+          <td nzLeft>{{ data.name }}</td>
+          <td >{{ data.zone }}</td>
+          <td >{{ data.quantity }}</td>
+          <td>{{ data.typeDechet }}</td>
+          <td nzRight>{{ data.deleguetAt }}</td>
+          <td nzRight>
+            <div class="d-flex">
+              <a class="btn btn-secondary btn-sm me-1">Modifier</a>
+              <a class="btn btn-danger btn-sm">Supprimer</a>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</div>

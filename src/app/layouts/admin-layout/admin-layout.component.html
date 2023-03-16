@@ -1,0 +1,127 @@
+<nz-layout class="app-layout">
+  <nz-sider [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null"
+            class="menu-sidebar"
+            nzBreakpoint="md"
+            nzCollapsible
+            nzWidth="256px">
+    <div class="sidebar-logo">
+      <a routerLink="/admin/home">
+        <img alt="logo" src="https://ng.ant.design/assets/img/logo.svg">
+        <h1 class="font-name-jacques-francois-shadow color-green">Easy-Waste</h1>
+      </a>
+    </div>
+    <ul [nzInlineCollapsed]="isCollapsed" nz-menu nzMode="inline" nzTheme="dark">
+      <li
+        [ngStyle]="{'padding' : isCollapsed ? 'inherit': '1rem', 'width':isCollapsed ?  'initial': 'fit-content'}"
+        class="dashboard"
+        routerLink="{{home}}"
+        nz-menu-item>
+        <span class="mr-1" nz-icon nzTheme="outline" nzType="dashboard"></span>
+        <span>Dashboard</span>
+      </li>
+
+      <li nz-submenu nzIcon="user" nzOpen nzTitle="Utilisateurs">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="routeMapping.addUser">Enregistrements</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="routeMapping.listUser">Listes Utilisateurs</a>
+          </li>
+        </ul>
+      </li>
+
+      <li nz-submenu nzIcon="role" nzOpen nzTitle="Roles">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="routeMapping.addRole">Enregistrements</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a [routerLink]="routeMapping.listRole">Listes Roles</a>
+          </li>
+        </ul>
+      </li>
+
+      <li nz-submenu nzIcon="dashboard" nzTitle="Points de collecte">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>..</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzIcon="calendar" nzTitle="Planification des collectes">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>..</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzIcon="appstore" nzTitle="Collecte">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>..</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzIcon="delete" nzTitle="Dechet">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>..</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzIcon="stock" nzTitle="Rapport Statistique">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>..</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzIcon="alert" nzTitle="Alerte">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>..</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header d-flex align-items-center">
+        <span (click)="isCollapsed = !isCollapsed" class="header-trigger d-flex">
+            <span [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+                  class="trigger"
+                  nz-icon
+            ></span>
+        </span>
+
+        <div class="container-fluid">
+          <div class="row d-flex justify-content-end">
+            <div class="col-10 align-items-center d-flex justify-content-end">
+              <div class="date mr-2 font-name-iceland">
+                <span>01/03/2023</span>
+              </div>
+
+              <div class="name-user-connected mr-2 font-name-iceland d-flex align-items-center">
+                <span>
+                  <i class="bi bi-envelope-open text-white position-relative"></i>
+                </span>
+                <span>Nom prenom</span>
+                <span>
+                  <i class="bi bi-person-circle position-relative"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

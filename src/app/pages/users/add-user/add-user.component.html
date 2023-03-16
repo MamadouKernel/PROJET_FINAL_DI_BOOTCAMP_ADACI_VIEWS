@@ -1,0 +1,108 @@
+<div class="container-fluid bg-image p-0 m-0 h-100 w-100">
+  <div class="row h-100">
+    <div class="m-auto col-sm-12 col-md-12 col-lg-12">
+      <div class="content-card">
+        <div class="container-fluid">
+          <div class="row">
+            <div
+              class="col-sm-12 col-md-12 d-flex align-items-center flex-sm-column flex-md-row justify-content-center">
+              <h4 class="font-name-jacques-francois-shadow m-0 color-green">Eco-Citoyens CI</h4>
+              <div class="container-img">
+                <img alt="Icon" src="assets/images/full-trash.png">
+              </div>
+            </div>
+
+            <div class="col-12 mt-1 mb-1">
+              <div class="container-img-login m-auto">
+                <img alt="Avatar" src="assets/images/male-uer.png">
+              </div>
+            </div>
+
+            <div class="col-12 mb-3">
+              <h6 class="font-name-jet-brains-mono text-center">
+                Inscription
+              </h6>
+            </div>
+
+            <form [formGroup]="form" class="container-fluid">
+              <div class="row mb-3">
+                <div class="col-sm-12 col-md-6 mb-2">
+                  <div class="filed-input p-2">
+                    <div class="col field">
+                      <input class="form-control" name="Lastname" formControlName="Lastname" placeholder="Lastname..........."
+                             type="text">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-2">
+                  <div class="filed-input p-2">
+                    <div class="col field">
+                      <input class="form-control" name="Firstname" formControlName="Firstname" placeholder="Fistname..........."
+                             type="text">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-2">
+                  <div class="filed-input p-2">
+                    <div class="col field">
+                      <input class="form-control" name="Email" formControlName="Email" placeholder="Email..........." type="text">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-2">
+                  <div class="filed-input p-2">
+                    <div class="col field">
+                      <input class="form-control" name="Username" formControlName="Username" placeholder="Username..........."
+                             type="text">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-2">
+                  <div class="filed-input p-2">
+                    <div class="col field">
+                      <select class="form-control form-select" name="Role" formControlName="Role">
+                        <option value="">Administrateur</option>
+                        <option value="">Autre</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-2">
+                  <div class="filed-input p-2">
+                    <div class="col field">
+                      <input class="form-control" name="Phone" formControlName="Phone" placeholder="Téléphone..........."
+                             type="text">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-2">
+                  <div class="filed-input p-2">
+                    <div class="col field">
+                      <input class="form-control" name="Password" formControlName="Password" id="" placeholder="Password..........."
+                             type="password">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-2">
+                  <div class="filed-input p-2">
+                    <div class="col field">
+                      <input class="form-control" name="ConfirmPassword" formControlName="ConfirmPassword"
+                             placeholder="Confirmation de Mot de passe..........." type="password">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+
+            <div class="col-12 mt-2 mb-2 justify-content-center d-flex mt-2">
+              <button (click)="submitForm()" name="inscription" class="text-white bg-success btn align-items-center text-center w-25">
+                <label>Insription</label>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
